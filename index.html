@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voucher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/scripts.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <img class="header__logo" src="/images/logo-honda.png"/>
+            <img class="header__logo" src="/images/logo-astra.png"/>
+        </div>
+    </header>
+    <main>
+        <div class="banner">
+            <div class="container">
+                <h1 class="banner__title">
+                    Pilih Promo
+                    <span class="banner__title__yang">yang</span>
+                    <span class="banner__title__paling">Paling</span>
+                    Menarik
+                    <span class="banner__title__untukmu">Untukmu</span>
+                </h1>
+            </div>
+        </div>
+        <div class="form">
+            <div class="container">
+                <p class="form__title">Isi data dibawah ini dan dapatkan promo menariknya</p>
+                <form id="formPromo">
+                    <div class="form-group">
+                        <label for="">Nama</label>
+                        <input name="name" type="text" value="" placeholder="Masukkan Nama" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input name="email" type="email" value="" placeholder="Masukkan Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">No. HP</label>
+                        <input name="phone" type="tel" value="" placeholder="Cth: 08123456xxx" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Akun Sosial Media (Facebook/TikTok/Instagram)</label>
+                        <input name="social_media" type="text" value="" placeholder="Masukkan Akun Social Media" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Tahun Motor</label>
+                        <div class="select">
+                            <select name="year" onchange="onYearChange(this)" required>
+                                <option value="" disabled selected>-- Pilih Tahun Motor --</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            <div class="select__arrow">
+                                <img src="/images/icon-arrow.svg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="typeField">Tipe Motor</label>
+                        <div class="select">
+                            <select name="type" form="formPromo" id="typeField">
+                                <option value="" disabled selected>-- Pilih Tahun Motor --</option>
+                            </select>
+                            <div class="select__arrow">
+                                <img src="/images/icon-arrow.svg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Nomor Mesin Motor</label>
+                        <input name="machine_number" type="text" value="" placeholder="Masukkan Nomor Mesin Motor" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Tipe Voucher*</label>
+                        <div class="custom-select" onclick="toggleList()">
+                            <input name="voucherId" id="voucherId" class="custom-select__hidden-input" value="" required>
+                            <div class="custom-select__input">
+                                <input id="voucherTitle" value="" placeholder="-- Pilih Tipe Voucher --" disabled>
+                                <div class="select__arrow">
+                                    <img src="/images/icon-arrow.svg" />
+                                </div>
+                            </div>
+                            <div id="voucherList" class="custom-select__list hide">
+                                <div class="custom-select__option" data-voucherId="1" onclick="customSelectOption(this)">
+                                    <p class="custom-select__option__title">Promo Ceria 1</p>
+                                    <p class="custom-select__option__desc">Service Lengkap + Ganti Oli + Diskon sebesar Rp15.000</p>
+                                </div>
+                                <div class="custom-select__option" data-voucherId="2" onclick="customSelectOption(this)">
+                                    <p class="custom-select__option__title">Promo Ceria 2</p>
+                                    <p class="custom-select__option__desc">Service Lengkap + Ganti Oli + Diskon sebesar Rp15.000</p>
+                                </div>
+                                <div class="custom-select__option" data-voucherId="3" onclick="customSelectOption(this)">
+                                    <p class="custom-select__option__title">Promo Ceria 3</p>
+                                    <p class="custom-select__option__desc">Service Lengkap + Ganti Oli + Diskon sebesar Rp15.000</p>
+                                </div>
+                                <div class="custom-select__option" data-voucherId="4" onclick="customSelectOption(this)">
+                                    <p class="custom-select__option__title">Promo Ceria 4</p>
+                                    <p class="custom-select__option__desc">Service Lengkap + Ganti Oli + Diskon sebesar Rp15.000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="form-group__notes">Voucher promo akan masuk di aplikasi pada halaman 'voucher saya' setelah dilakukan registrasi motor oleh pengguna</p>
+                    </div>
+                    <p class="form__notes">*S&K berlaku</p>
+                    <div class="form__button">
+                        <button type="submit">AMBIL PROMO SEKARANG</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
