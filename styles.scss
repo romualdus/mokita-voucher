@@ -1,0 +1,339 @@
+$media-tablet: 768px;
+$media-desktop: 992px;
+$header-height: 3.75rem;
+$header-height--desktop: 4rem;
+
+$red: #d0242a;
+
+@mixin tablet {
+    @media (min-width: $media-tablet) { @content; }
+}
+
+@mixin desktop {
+    @media (min-width: $media-desktop) { @content; }
+}
+
+body, button {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    margin-top: $header-height;
+
+    @include tablet {
+        margin-top: $header-height--desktop;
+    }
+}
+
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+
+    @include tablet {
+        max-width: $media-tablet;
+    }
+
+    @include desktop {
+        max-width: $media-desktop;
+    }
+}
+
+.header {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0.9rem 0;
+    height: $header-height;
+    background-color: white;
+    z-index: 10;
+
+    @include tablet {
+        height: $header-height--desktop;
+        padding: 0.8rem 0;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    &__logo {
+        height: 100%;
+        width: auto;
+    }
+}
+
+.banner {
+    padding: 1.2rem 0;
+    background-image: url('./images/background-banner.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include tablet {
+        padding: 2.5rem 0;
+    }
+
+    .container {
+        max-width: $media-tablet;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 1.375rem;
+        line-height: 1.75rem;
+        font-weight: 700;
+        font-style: italic;
+        text-align: center;
+        color: white;
+
+        @include tablet {
+            font-size: 2rem;
+        }
+
+        &__yang {
+            font-size: 1.125rem;
+            
+            @include tablet {
+                font-size: 1.4rem;
+            }
+        }
+
+        &__paling, &__untukmu {
+            @include tablet {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+
+.form {
+    padding: 1.5rem 1rem;
+
+    .container {
+        max-width: 600px;
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 1rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-align: center;
+
+        @include tablet {
+            font-size: 1.2rem;
+        }
+    }
+
+    &__notes {
+        margin: 0.8rem 0;
+        font-size: 0.625rem;
+        font-weight: 500;
+        font-style: italic;
+
+        @include tablet {
+            margin: 1rem 0;
+            font-size: 0.8rem;
+        }
+    }
+
+    &__button {
+        text-align: center;
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            border: 0;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: white;
+            background-color: $red;
+            cursor: pointer;
+
+            @include tablet {
+                max-width: 18rem;
+                padding: 0.75rem 1rem;
+                margin-top: 2rem;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 0.8rem;
+
+    @include tablet {
+        margin-bottom: 1rem;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+
+        @include tablet {
+            font-size: 1rem;
+        }
+    }
+
+    input, select {
+        box-sizing: border-box;
+        padding: 0.6rem 1rem;
+        width: 100%;
+        border: 1px solid #979797;
+        border-radius: 0.5rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.75rem;
+        line-height: 1;
+        outline: none;
+
+        @include tablet {
+            font-size: 1rem;
+        }
+    }
+
+    select {
+        padding: 0.675rem 0.9rem;
+        -moz-appearance:none; /* Firefox */
+        -webkit-appearance:none; /* Safari and Chrome */
+        appearance:none;
+        background-color: transparent;
+        cursor: pointer;
+
+        option:first {
+            color: #757575;
+        }
+    }
+
+    span {
+        display: none;
+    }
+
+    &__notes {
+        margin: 0;
+        margin-top: 0.2rem;
+        font-size: 0.625rem;
+        font-style: italic;
+
+        @include tablet {
+            margin-top: 0.4rem;
+            font-size: 0.8rem;
+        }
+    }
+
+    &--error {
+        input {
+            border-color: $red;
+        }
+
+        span {
+            display: block;
+            position: absolute;
+            top: 0.4rem;
+            right: 0;
+            font-size: 0.625rem;
+            color: $red;
+
+            @include tablet {
+                top: 0.7rem;
+            }
+        }
+    }
+}
+
+.select {
+    position: relative;
+    overflow: hidden;
+
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        padding: 0.8rem;
+        border-left: 1px solid #979797;
+        z-index: -1;
+
+        img {
+            width: 0.6rem;
+        }
+    }
+}
+
+.custom-select {
+    position: relative;
+
+    &__input {
+        position: relative;
+        overflow: hidden;
+        background-color: white;
+        z-index: 1;
+
+        input {
+            &:disabled {
+                color: black;
+                background-color: transparent;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__hidden-input {
+        position: absolute;
+        z-index: -2;
+    }
+
+    &__list {
+        box-sizing: border-box;
+        position: absolute;
+        top: 105%;
+        left: 0;
+        right: 0;
+        max-height: 8rem;
+        background-color: white;
+        box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.25);
+        overflow-y: scroll;
+        cursor: pointer;
+
+        &.hide {
+            display: none;
+        }
+    }
+
+    &__option {
+        padding: 0.5rem;
+        border-bottom: 1px solid #e7e7e7;
+
+        &:hover {
+            background-color: #f2f2f2;
+        }
+
+        &__title, &__desc {
+            font-size: 0.75rem;
+            margin: 0
+        }
+
+        &__title {
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+        }
+
+        &.selected {
+            background-color: #cccccc;
+        }
+    }
+}
