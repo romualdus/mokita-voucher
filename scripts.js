@@ -17,6 +17,13 @@ function customSelectOption(e) {
   }
 
   e.classList.add('selected')
+
+  const formGroup = voucherIdElement.parentElement.parentElement
+  formGroup.classList.remove('form-group--error')
+}
+
+function onValueChange(e) {
+  e.parentElement.classList.remove('form-group--error')
 }
 
 function onYearChange(e) {
@@ -24,7 +31,7 @@ function onYearChange(e) {
   const typeElement = document.getElementById('typeField')
   typeElement.value = '<option value="" disabled selected>Loading...<option>'
 
-  fetch(`getBike.json`, {
+  fetch(`/url/${year}`, {
     method: 'GET'
   })
   .then(res =>  res.json())

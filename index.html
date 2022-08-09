@@ -38,9 +38,10 @@
                         <label for="">Nama</label>
                         <input name="name" type="text" value="" placeholder="Masukkan Nama" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form-group--error">
                         <label for="">Email</label>
-                        <input name="email" type="email" value="" placeholder="Masukkan Email" required>
+                        <input name="email" type="email" value="" placeholder="Masukkan Email" oninput="onValueChange(this)" required>
+                        <span>email sudah terdaftar</span>
                     </div>
                     <div class="form-group">
                         <label for="">No. HP</label>
@@ -80,7 +81,7 @@
                         <label for="">Nomor Mesin Motor</label>
                         <input name="machine_number" type="text" value="" placeholder="Masukkan Nomor Mesin Motor" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form-group--error">
                         <label for="">Tipe Voucher*</label>
                         <div class="custom-select" onclick="toggleList()">
                             <input name="voucherId" id="voucherId" class="custom-select__hidden-input" value="" required>
@@ -110,6 +111,7 @@
                             </div>
                         </div>
                         <p class="form-group__notes">Voucher promo akan masuk di aplikasi pada halaman 'voucher saya' setelah dilakukan registrasi motor oleh pengguna</p>
+                        <span>error message here</span>
                     </div>
                     <p class="form__notes">*S&K berlaku</p>
                     <div class="form__button">
