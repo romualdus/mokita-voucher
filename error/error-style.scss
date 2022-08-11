@@ -1,0 +1,118 @@
+$media-tablet: 768px;
+$media-desktop: 992px;
+$header-height: 3.75rem;
+$header-height--desktop: 4rem;
+
+$red: #d0242a;
+
+@mixin tablet {
+    @media (min-width: $media-tablet) { @content; }
+}
+
+@mixin desktop {
+    @media (min-width: $media-desktop) { @content; }
+}
+
+body, button {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+
+    @include tablet {
+        max-width: $media-tablet;
+    }
+
+    @include desktop {
+        max-width: $media-desktop;
+    }
+}
+
+.header {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0.9rem 0;
+    height: $header-height;
+    background-color: white;
+    z-index: 10;
+
+    @include tablet {
+        height: $header-height--desktop;
+        padding: 0.8rem 0;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    &__logo {
+        height: 100%;
+        width: auto;
+    }
+}
+
+.banner {
+    .container {
+        box-sizing: border-box;
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+    }
+
+    &__content {
+        padding: $header-height 0;
+        text-align: center;
+
+        @include tablet {
+            padding: $header-height--desktop 0;
+        }
+
+        img {
+            width: 100%;
+            max-width: 20rem;
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.6rem;
+            font-weight: 700;
+
+            @include tablet {
+                font-size: 2rem;
+            }
+        }
+        p {
+            font-size: 1rem;
+        }
+        button {
+            width: 100%;
+            margin-top: 2rem;
+            padding: 1rem;
+            border: 0;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: white;
+            background-color: $red;
+            cursor: pointer;
+
+            @include tablet {
+                max-width: 18rem;
+                padding: 0.75rem 1rem;
+                font-size: 1rem;
+            }
+        }
+    }
+}
