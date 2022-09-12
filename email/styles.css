@@ -1,0 +1,72 @@
+body, button {
+  max-width: 768px;
+  margin: auto;
+  font-family: "Montserrat", sans-serif;
+  border: 1px solid #e5e5e5;
+}
+
+h1, p {
+  margin: 0;
+}
+
+.header {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 4fr 1fr 4fr;
+  width: 100%;
+  height: 100%;
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+.header__logo img {
+  height: 100%;
+  width: auto;
+}
+.header__logo--sinsen {
+  padding-left: 1rem;
+  background-color: #204e8b;
+}
+.header__logo--honda {
+  padding-right: 1rem;
+  justify-content: end;
+  background-color: #d11200;
+}
+.header__separator {
+  background: linear-gradient(115deg, #204e8b 0%, #204e8b 50%, #d11200 50%, #d11200 100%);
+}
+
+.content {
+  max-width: 504px;
+  margin: auto;
+  padding: 3rem;
+  padding-top: 0;
+  text-align: center;
+}
+.content__title {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+.content__desc {
+  margin: 0;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.table {
+  padding: 0 1rem;
+  background-color: #f9f9f9;
+}
+.table__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.table__item:last-child {
+  border: 0;
+}/*# sourceMappingURL=styles.css.map */
